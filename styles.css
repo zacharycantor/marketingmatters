@@ -9,7 +9,7 @@ body {
   font-family: 'Segoe UI', sans-serif;
   background: #f5f7fa;
   color: #222;
-  line-height: 1.6;
+  line-height: 1.7; /* slightly increased for readability */
 }
 
 /* NAV */
@@ -17,14 +17,14 @@ header {
   position: sticky;
   top: 0;
   background: #0f172a;
-  padding: 15px;
+  padding: 18px;
   z-index: 1000;
 }
 
 nav {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 40px;
 }
 
 nav a {
@@ -40,7 +40,7 @@ nav a:hover {
 
 /* HERO */
 .hero {
-  height: 80vh;
+  height: 85vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -53,12 +53,17 @@ nav a:hover {
 
 .hero h1 {
   font-size: 48px;
-  margin-bottom: 10px;
+  margin-bottom: 20px; /* more space */
+}
+
+.hero p {
+  margin-bottom: 25px;
+  max-width: 500px;
 }
 
 /* BUTTON */
 .cta-button {
-  margin-top: 20px;
+  margin-top: 10px;
   padding: 14px 28px;
   background: #f97316;
   border: none;
@@ -76,13 +81,14 @@ nav a:hover {
 
 /* SECTIONS */
 section {
-  padding: 100px 30px;
+  padding: 120px 30px; /* increased vertical spacing */
   max-width: 1100px;
   margin: auto;
 }
 
+/* HEADINGS */
 h2 {
-  margin-bottom: 20px;
+  margin-bottom: 40px; /* BIG improvement */
   font-size: 32px;
 }
 
@@ -91,21 +97,33 @@ h2 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 40px;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 /* CARDS */
 .card {
   background: white;
-  padding: 30px;
+  padding: 35px; /* more internal spacing */
   border-radius: 12px;
   box-shadow: 0 12px 25px rgba(0,0,0,0.06);
   transition: transform 0.3s, box-shadow 0.3s;
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* space INSIDE cards */
 }
 
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 18px 35px rgba(0,0,0,0.1);
+.card h3 {
+  margin-bottom: 5px;
+}
+
+.card p {
+  line-height: 1.6;
+}
+
+/* SPACE BETWEEN STACKED ELEMENTS */
+.card + .card {
+  margin-top: 10px;
 }
 
 /* ANIMATIONS */
@@ -120,18 +138,27 @@ h2 {
   transform: translateY(0);
 }
 
+/* CTA SECTIONS (bottom spacing fix) */
+section div[style*="text-align:center"] {
+  margin-top: 60px !important;
+}
+
 /* FOOTER */
 footer {
   text-align: center;
-  padding: 30px;
+  padding: 40px;
   background: #0f172a;
   color: white;
-  margin-top: 40px;
+  margin-top: 60px;
 }
 
 /* MOBILE */
 @media(max-width: 600px) {
   .hero h1 {
     font-size: 32px;
+  }
+
+  section {
+    padding: 80px 20px;
   }
 }
