@@ -1,4 +1,3 @@
-/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -9,10 +8,9 @@ body {
   font-family: 'Segoe UI', sans-serif;
   background: #f5f7fa;
   color: #222;
-  line-height: 1.7; /* slightly increased for readability */
+  line-height: 1.7;
 }
 
-/* NAV */
 header {
   position: sticky;
   top: 0;
@@ -25,6 +23,7 @@ nav {
   display: flex;
   justify-content: center;
   gap: 40px;
+  flex-wrap: wrap;
 }
 
 nav a {
@@ -38,9 +37,8 @@ nav a:hover {
   color: #38bdf8;
 }
 
-/* HERO */
 .hero {
-  height: 85vh;
+  min-height: 85vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -48,20 +46,28 @@ nav a:hover {
   background: linear-gradient(135deg, #38bdf8, #6366f1);
   color: white;
   text-align: center;
-  padding: 20px;
+  padding: 30px;
+}
+
+.eyebrow {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  opacity: 0.9;
+  margin-bottom: 10px;
 }
 
 .hero h1 {
   font-size: 48px;
-  margin-bottom: 20px; /* more space */
+  margin-bottom: 20px;
+  max-width: 900px;
 }
 
 .hero p {
   margin-bottom: 25px;
-  max-width: 500px;
+  max-width: 700px;
 }
 
-/* BUTTON */
 .cta-button {
   margin-top: 10px;
   padding: 14px 28px;
@@ -79,54 +85,51 @@ nav a:hover {
   transform: scale(1.08);
 }
 
-/* SECTIONS */
 section {
-  padding: 120px 30px; /* increased vertical spacing */
+  padding: 100px 30px;
   max-width: 1100px;
   margin: auto;
 }
 
-/* HEADINGS */
 h2 {
-  margin-bottom: 40px; /* BIG improvement */
+  margin-bottom: 25px;
   font-size: 32px;
 }
 
-/* GRID */
+.lead {
+  font-size: 1.05rem;
+  max-width: 900px;
+  margin-bottom: 30px;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 40px;
+  gap: 30px;
   margin-top: 20px;
 }
 
-/* CARDS */
 .card {
   background: white;
-  padding: 35px; /* more internal spacing */
+  padding: 30px;
   border-radius: 12px;
-  box-shadow: 0 12px 25px rgba(0,0,0,0.06);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.06);
   transition: transform 0.3s, box-shadow 0.3s;
-
   display: flex;
   flex-direction: column;
-  gap: 15px; /* space INSIDE cards */
+  gap: 15px;
 }
 
-.card h3 {
-  margin-bottom: 5px;
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.09);
 }
 
-.card p {
-  line-height: 1.6;
+.center-wrap {
+  text-align: center;
+  margin-top: 50px;
 }
 
-/* SPACE BETWEEN STACKED ELEMENTS */
-.card + .card {
-  margin-top: 10px;
-}
-
-/* ANIMATIONS */
 .hidden {
   opacity: 0;
   transform: translateY(40px);
@@ -138,12 +141,6 @@ h2 {
   transform: translateY(0);
 }
 
-/* CTA SECTIONS (bottom spacing fix) */
-section div[style*="text-align:center"] {
-  margin-top: 60px !important;
-}
-
-/* FOOTER */
 footer {
   text-align: center;
   padding: 40px;
@@ -152,8 +149,7 @@ footer {
   margin-top: 60px;
 }
 
-/* MOBILE */
-@media(max-width: 600px) {
+@media (max-width: 600px) {
   .hero h1 {
     font-size: 32px;
   }
