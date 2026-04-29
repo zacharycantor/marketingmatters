@@ -158,3 +158,75 @@ footer {
     padding: 80px 20px;
   }
 }
+
+
+.course-visuals {
+  display: grid;
+  grid-template-columns: 1.4fr 1.4fr 1fr;
+  gap: 24px;
+  margin-top: 45px;
+  align-items: stretch;
+}
+
+.course-visuals img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.visual-collage,
+.visual-feature {
+  position: relative;
+  min-height: 250px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.15);
+  isolation: isolate;
+}
+
+.visual-collage::after,
+.visual-feature::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0));
+  z-index: 1;
+}
+
+.visual-feature {
+  transform: translateY(24px);
+}
+
+.visual-note {
+  position: absolute;
+  left: 16px;
+  bottom: 14px;
+  color: white;
+  font-weight: 600;
+  z-index: 2;
+  letter-spacing: 0.02em;
+}
+
+.visual-badge {
+  justify-content: flex-start;
+  gap: 12px;
+  background: linear-gradient(160deg, #ffffff, #f6f8ff);
+}
+
+.visual-badge img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 900px) {
+  .course-visuals {
+    grid-template-columns: 1fr;
+  }
+
+  .visual-feature {
+    transform: none;
+  }
+}
