@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Sora:wght@600;700;800&display=swap');
 :root {
   --bg: #070b15;
   --surface: #0f172a;
@@ -20,6 +21,9 @@
 }
 
 body {
+  font-family: 'Outfit', 'Segoe UI', sans-serif;
+  background: #f5f7fa;
+  color: #222;
   font-family: 'Inter', 'Segoe UI', sans-serif;
   background:
     radial-gradient(circle at 10% 10%, rgba(56, 189, 248, 0.14), transparent 45%),
@@ -117,6 +121,20 @@ nav a:hover::after {
   color: #e2e8f0;
   margin-bottom: 25px;
   max-width: 700px;
+}
+
+.course-title,
+h2,
+.card h3,
+.visual-badge h3 {
+  font-family: 'Sora', 'Outfit', 'Segoe UI', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.course-title {
+  font-weight: 800;
+  text-wrap: balance;
+  text-shadow: 0 8px 24px rgba(15, 23, 42, 0.18);
 }
 
 .cta-button {
